@@ -58,7 +58,7 @@ jobs:
     - name: Setup secrets & cache dates
       run: |
         echo -ne "url: ${{ vars.CDSAPI_URL }}\nkey: ${{  secrets.CDSAPI_TOKEN  }}\n" > ~/.cdsapirc
-        echo "today: $(date +'%Y-%m-%d')"  >> $GITHUB_ENV
+        echo "today=$(date +'%Y-%m-%d')"  >> $GITHUB_ENV
 
     - name: Cache retrieved cutouts
       uses: actions/cache@v4
