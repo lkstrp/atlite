@@ -43,7 +43,6 @@ jobs:
         - windows-latest
     env:
       MPLBACKEND: Agg  # https://github.com/orgs/community/discussions/26434
-      ATLITE_CACHE_PATH: ./.atlite_cache/
 
     steps:
     - uses: actions/checkout@v4
@@ -59,6 +58,7 @@ jobs:
       run: |
         echo -ne "url: ${{ vars.CDSAPI_URL }}\nkey: ${{  secrets.CDSAPI_TOKEN  }}\n" > ~/.cdsapirc
         echo "today=$(date +'%Y-%m-%d')"  >> $GITHUB_ENV
+        echo "ATLITE_CACHE_PATH=$(pwd)/.atlite_cache" >> $GITHUB_ENV
 
     - name: Cache retrieved cutouts
       uses: actions/cache@v4
