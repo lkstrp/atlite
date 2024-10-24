@@ -43,7 +43,7 @@ jobs:
         - windows-latest
     env:
       MPLBACKEND: Agg  # https://github.com/orgs/community/discussions/26434
-      ATLITE_CACHE_PATH: ~/.atlite_cache/
+      ATLITE_CACHE_PATH: ./.atlite_cache/
 
     steps:
     - uses: actions/checkout@v4
