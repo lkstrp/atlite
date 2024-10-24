@@ -63,7 +63,7 @@ jobs:
     - name: Cache retrieved cutouts
       uses: actions/cache@v4
       with:
-        path: ${{ env.ATLITE_CACHE_PATH }}
+        path: ./.atlite_cache
         key: cutouts-${{ env.today }}
       id: cache-env
 
