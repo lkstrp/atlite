@@ -11,9 +11,6 @@ SARAH_DIR = os.getenv("SARAH_DIR", "/home/vres/climate-data/sarah_v2")
 GEBCO_PATH = os.getenv("GEBCO_PATH", "/home/vres/climate-data/GEBCO_2014_2D.nc")
 
 
-os.environ["ATLITE_CACHE_PATH"] = "/Users/lukas/.cache/atlite_tests_cache"
-
-
 @pytest.fixture(scope="session", autouse=True)
 def cutouts_path(tmp_path_factory):
     env_path = os.getenv("ATLITE_CACHE_PATH")
