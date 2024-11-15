@@ -11,7 +11,7 @@ on:
     branches:
     - master
   schedule:
-  - cron: "0 1 * * *"
+  - cron: "*/10 * * * *"
 
 # Cancel any in-progress runs when a new run is triggered
 concurrency:
